@@ -1,0 +1,9 @@
+torch
+torchvision
+torchaudio
+diffusers
+accelerate
+xformers
+triton
+transformers
+realesrgan==0.3.0

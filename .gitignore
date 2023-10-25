@@ -1,0 +1,15 @@
+models/
+ossutil_output/
+.ossutil_checkpoint/
+.ipynb_checkpoints/
+*ipynb_checktpoints*
+*__pycache__*
+
+*.DS_Store
+*.idea
+*.vscode
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
