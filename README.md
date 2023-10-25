@@ -38,9 +38,10 @@ ${ROOT}
 |   |-- sr-base
 |   |-- sr-control
 |   |-- RealESRGAN_x2plus.pth
-|-- src
+|-- txt2panoimg
 |...
 ```
+Or download the models from [hugging face](https://huggingface.co/archerfmy0831/sd-t2i-360panoimage)
 
 ### Inference
 ```
