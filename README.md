@@ -1,10 +1,9 @@
 # SD-T2I-360PanoImage
-repository for 360 panorama image generation based on Stable Diffusion
+repository for [**Diffusion360: Seamless 360 Degree Panoramic Image Generation based on Diffusion Models** ](https://arxiv.org/pdf/2311.13141.pdf)
 
 # ![a living room](data/a-living-room.png "a living room")
 # ![the mountains](data/the-mountains.png "the mountains")
 # ![the times square](data/the-times-square.png "the times square")
-
 
 ## Requirements
 - torch
