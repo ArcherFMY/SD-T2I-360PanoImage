@@ -40,7 +40,7 @@ ${ROOT}
 |-- txt2panoimg
 |...
 ```
-Or download the models from [hugging face](https://huggingface.co/archerfmy0831/sd-t2i-360panoimage)
+Or download the models from [Hugging Face](https://huggingface.co/archerfmy0831/sd-t2i-360panoimage)
 
 ### Inference
 ```
