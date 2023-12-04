@@ -19,6 +19,7 @@ repository for [**Diffusion360: Seamless 360 Degree Panoramic Image Generation b
 - triton
 - transformers
 - realesrgan
+- py360convert
 
 
 ## Installation
