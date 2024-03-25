@@ -3,27 +3,18 @@
 # originally Apache 2.0 License and public available at
 # https://github.com/huggingface/diffusers/blob/main/src/diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion.py
 
-import inspect
 import re
-import warnings
 from typing import Any, Callable, Dict, List, Optional, Union
 
 import torch
 from diffusers import (AutoencoderKL, DiffusionPipeline,
-                       StableDiffusionPipeline, UNet2DConditionModel)
-from diffusers.configuration_utils import FrozenDict
-from diffusers.image_processor import VaeImageProcessor
+                       StableDiffusionPipeline)
+
 from diffusers.loaders import LoraLoaderMixin, TextualInversionLoaderMixin
-from diffusers.models.vae import DecoderOutput
+from diffusers.models.autoencoders.vae import DecoderOutput
 from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput
-from diffusers.pipelines.stable_diffusion.safety_checker import \
-    StableDiffusionSafetyChecker
-from diffusers.schedulers import KarrasDiffusionSchedulers
-from diffusers.utils import (deprecate, is_accelerate_available,
-                             is_accelerate_version, logging, randn_tensor,
-                             replace_example_docstring)
-from packaging import version
-from transformers import CLIPImageProcessor, CLIPTextModel, CLIPTokenizer
+from diffusers.utils import logging, replace_example_docstring
+from transformers import CLIPTokenizer
 
 logger = logging.get_logger(__name__)  # pylint: disable=invalid-name
 

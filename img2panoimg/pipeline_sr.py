@@ -4,10 +4,7 @@
 # https://github.com/huggingface/diffusers/blob/main/src/diffusers/pipelines/controlnet/pipeline_controlnet_img2img.py
 
 import copy
-import inspect
-import os
 import re
-import warnings
 from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
 import numpy as np
@@ -15,22 +12,16 @@ import PIL.Image
 import torch
 import torch.nn.functional as F
 from diffusers import (AutoencoderKL, DiffusionPipeline,
-                       StableDiffusionControlNetImg2ImgPipeline,
-                       UNet2DConditionModel)
-from diffusers.image_processor import VaeImageProcessor
+                       StableDiffusionControlNetImg2ImgPipeline)
 from diffusers.loaders import LoraLoaderMixin, TextualInversionLoaderMixin
 from diffusers.models import ControlNetModel
-from diffusers.models.vae import DecoderOutput
+from diffusers.models.autoencoders.vae import DecoderOutput
 from diffusers.pipelines.controlnet.multicontrolnet import MultiControlNetModel
 from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput
-from diffusers.pipelines.stable_diffusion.safety_checker import \
-    StableDiffusionSafetyChecker
-from diffusers.schedulers import KarrasDiffusionSchedulers
-from diffusers.utils import (PIL_INTERPOLATION, deprecate,
-                             is_accelerate_available, is_accelerate_version,
-                             is_compiled_module, logging, randn_tensor,
-                             replace_example_docstring)
-from transformers import CLIPImageProcessor, CLIPTextModel, CLIPTokenizer
+from diffusers.utils import logging, replace_example_docstring
+from diffusers.utils.torch_utils import is_compiled_module
+
+from transformers import CLIPTokenizer
 
 logger = logging.get_logger(__name__)  # pylint: disable=invalid-name
 

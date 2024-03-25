@@ -12,12 +12,10 @@ from typing import Any, Callable, Dict, List, Optional, Union, Tuple
 import os
 import torch
 import torch.nn.functional as F
-from diffusers import (AutoencoderKL, DiffusionPipeline, ControlNetModel,
-                       StableDiffusionPipeline, UNet2DConditionModel)
-from diffusers.configuration_utils import FrozenDict
+from diffusers import (AutoencoderKL, DiffusionPipeline, ControlNetModel, UNet2DConditionModel)
 from diffusers.image_processor import VaeImageProcessor
 from diffusers.loaders import LoraLoaderMixin, TextualInversionLoaderMixin
-from diffusers.models.vae import DecoderOutput
+from diffusers.models.autoencoders.vae import DecoderOutput
 from diffusers.models.controlnet import ControlNetOutput
 from diffusers.pipelines.controlnet.multicontrolnet import MultiControlNetModel
 from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput
@@ -25,9 +23,10 @@ from diffusers.pipelines.stable_diffusion.safety_checker import \
     StableDiffusionSafetyChecker
 from diffusers.schedulers import KarrasDiffusionSchedulers
 from diffusers.utils import (PIL_INTERPOLATION, deprecate, is_accelerate_available,
-                             is_accelerate_version, is_compiled_module, logging, randn_tensor,
+                             is_accelerate_version, logging,
                              replace_example_docstring)
-from packaging import version
+from diffusers.utils.torch_utils import is_compiled_module, randn_tensor
+
 from transformers import CLIPImageProcessor, CLIPTextModel, CLIPTokenizer
 import PIL
 import numpy as np
