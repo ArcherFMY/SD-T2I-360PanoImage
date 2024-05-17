@@ -1,6 +1,10 @@
 # SD-T2I-360PanoImage
 repository for [**Diffusion360: Seamless 360 Degree Panoramic Image Generation based on Diffusion Models** ](https://arxiv.org/pdf/2311.13141.pdf)
 
+## News!!!
+- 2024.5.17. A ComfyUI plugin of this repo is released!
+See https://github.com/ArcherFMY/Diffusion360_ComfyUI for more information
+
 ## Text-to-360Panorama
 # ![a living room](data/a-living-room.png "a living room")
 # ![the mountains](data/the-mountains.png "the mountains")
