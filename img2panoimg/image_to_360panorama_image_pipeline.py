@@ -160,6 +160,9 @@ class Image2360PanoramaImagePipeline(DiffusionPipeline):
         upscale = inputs.get('upscale', True)
         refinement = inputs.get('refinement', True)
 
+        guidance_scale_sr_step1 = inputs.get('guidance_scale_sr_step1', 15)
+        guidance_scale_sr_step2 = inputs.get('guidance_scale_sr_step1', 17)
+
         image = inputs['image']
         mask = inputs['mask']
 
@@ -210,7 +213,7 @@ class Image2360PanoramaImagePipeline(DiffusionPipeline):
                     (int(1536 * sr_scale), int(768 * sr_scale))),
                 strength=0.8,
                 controlnet_conditioning_scale=1.0,
-                guidance_scale=15,
+                guidance_scale=guidance_scale_sr_step1,
             ).images[0]
 
             print('running upscaler step2. Super-resolution with Real-ESRGAN')
@@ -243,7 +246,7 @@ class Image2360PanoramaImagePipeline(DiffusionPipeline):
                         (int(1536 * sr_scale), int(768 * sr_scale))),
                     strength=0.8,
                     controlnet_conditioning_scale=1.0,
-                    guidance_scale=17,
+                    guidance_scale=guidance_scale_sr_step2,
                 ).images[0]
             print('finished')
 

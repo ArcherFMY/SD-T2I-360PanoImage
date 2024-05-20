@@ -2,6 +2,7 @@
 repository for [**Diffusion360: Seamless 360 Degree Panoramic Image Generation based on Diffusion Models** ](https://arxiv.org/pdf/2311.13141.pdf)
 
 ## News!!!
+- 2024.5.20. I recommend to install 0.20.0<= diffusers <= 0.26.0. The higher diffusers version will get an over-saturated SR result.
 - 2024.5.17. A ComfyUI plugin of this repo is released!
 See https://github.com/ArcherFMY/Diffusion360_ComfyUI for more information
 

@@ -15,7 +15,10 @@ import torch.nn.functional as F
 from diffusers import (AutoencoderKL, DiffusionPipeline, ControlNetModel, UNet2DConditionModel)
 from diffusers.image_processor import VaeImageProcessor
 from diffusers.loaders import LoraLoaderMixin, TextualInversionLoaderMixin
-from diffusers.models.autoencoders.vae import DecoderOutput
+try:
+    from diffusers.models.autoencoders.vae import DecoderOutput
+except:
+    from diffusers.models.vae import DecoderOutput
 from diffusers.models.controlnet import ControlNetOutput
 from diffusers.pipelines.controlnet.multicontrolnet import MultiControlNetModel
 from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput
